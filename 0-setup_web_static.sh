@@ -8,7 +8,7 @@ then
 fi
 sudo mkdir -p /data/web_static/releases/test/
 sudo mkdir -p /data/web_static/shared
-echo -e "<html>\n\t<head>\n\t</head>\n\t<body>\n\t\tHolberton School\n\t</body>\n</html>" | sudo tee /data/web_static/releases/test/index.html
+echo -e "<html>\n  <head>\n  </head>\n  <body>\n    Holberton School\n  </body>\n</html>" | sudo tee /data/web_static/releases/test/index.html
 ln -sf /data/web_static/releases/test/ /data/web_static/current
 chown -R ubuntu:ubuntu /data/
 sudo sed -i '/^\terror_page 404 \/error404.html;/a \\n\tlocation \/hbnb_static\/ {\n\t\talias \/data\/web_static\/current/;\n\t}' /etc/nginx/sites-available/default
